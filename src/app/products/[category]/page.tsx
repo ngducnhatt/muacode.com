@@ -157,7 +157,7 @@ const CategoryPage = () => {
 												: "border-surface-600 bg-surface-700 text-ink-50 hover:border-primary-700"
 										}`}>
 										<div className="flex items-center justify-between">
-											<p className="text-sm font-nỏmal">
+											<p className="text-sm font-normal">
 												{variant.label}
 											</p>
 											{variant.save && (
