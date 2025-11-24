@@ -1,0 +1,22 @@
+{
+	"services": [
+		{
+			"id": "topup-card",
+			"title": "Top up cards & e-wallets",
+			"description": "Support Viettel, Mobi, Vina, Momo, ViettelPay with great rates.",
+			"cta": "Send request"
+		},
+		{
+			"id": "gift-consult",
+			"title": "Corporate giftcard consulting",
+			"description": "Bulk digital gift codes with invoices upon request.",
+			"cta": "Get quote"
+		},
+		{
+			"id": "account-verify",
+			"title": "Game account verification",
+			"description": "Check and secure Steam, Riot, EA accounts.",
+			"cta": "Book schedule"
+		}
+	]
+}

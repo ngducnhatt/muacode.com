@@ -1,0 +1,130 @@
+{
+  "categories": [
+    { "id": "software", "label": "Software Keys", "icon": "🧩" },
+    { "id": "game", "label": "Game & DLC", "icon": "🎮" },
+    { "id": "giftcard", "label": "Giftcard - Wallet", "icon": "💳" },
+    { "id": "service", "label": "Utility Services", "icon": "⚡" },
+    { "id": "promo", "label": "Promotions", "icon": "🔥" }
+  ],
+  "products": [
+    {
+      "id": "win11-pro",
+      "name": "Windows 11 Pro Key",
+      "price": "320.000đ",
+      "categoryId": "software",
+      "badge": "Best seller",
+      "description": "Online activation key with lifetime support.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "office365",
+      "name": "Office 365 Personal 1 year",
+      "price": "199.000đ",
+      "categoryId": "software",
+      "badge": "Hot",
+      "description": "Genuine account, includes 1TB cloud.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "steam-200",
+      "name": "Steam Wallet 200.000đ",
+      "price": "205.000đ",
+      "categoryId": "giftcard",
+      "badge": "New",
+      "description": "Top up Steam VN instantly.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "playstation-plus",
+      "name": "PlayStation Plus Essential 12 months",
+      "price": "1.190.000đ",
+      "categoryId": "giftcard",
+      "description": "Global activation, step-by-step guide.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "valorant-205",
+      "name": "Valorant 205 VP",
+      "price": "45.000đ",
+      "categoryId": "game",
+      "description": "Direct top-up, 1:1 warranty.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "gta-v",
+      "name": "Grand Theft Auto V: Premium Edition",
+      "price": "295.000đ",
+      "categoryId": "game",
+      "status": "available",
+      "description": "Rockstar account, change email after delivery.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "netflix-share",
+      "name": "Netflix UHD 1 month (shared slot)",
+      "price": "89.000đ",
+      "categoryId": "service",
+      "badge": "Saving",
+      "description": "4K viewing, profile change supported.",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "office-support",
+      "name": "Remote install Office & Windows",
+      "price": "0đ",
+      "categoryId": "service",
+      "description": "Schedule technician for free remote setup.",
+      "status": "available",
+      "image": "/assets/placeholder-card.svg"
+    },
+    {
+      "id": "combo-saving",
+      "name": "Combo Win 11 Pro + Office 365",
+      "price": "479.000đ",
+      "categoryId": "promo",
+      "badge": "Combo",
+      "description": "Save 15% vs buying separately.",
+      "image": "/assets/placeholder-card.svg"
+    }
+  ],
+  "services": [
+    {
+      "id": "topup-card",
+      "title": "Top up cards & e-wallets",
+      "description": "Support Viettel, Mobi, Vina, Momo, ViettelPay with great rates.",
+      "cta": "Send request"
+    },
+    {
+      "id": "gift-consult",
+      "title": "Corporate giftcard consulting",
+      "description": "Bulk digital gift codes with invoices upon request.",
+      "cta": "Get quote"
+    },
+    {
+      "id": "account-verify",
+      "title": "Game account verification",
+      "description": "Check and secure Steam, Riot, EA accounts.",
+      "cta": "Book schedule"
+    }
+  ],
+  "posts": [
+    {
+      "id": "huong-dan-thanh-toan",
+      "title": "How to pay and receive keys in 30s",
+      "excerpt": "A few steps to finish checkout and get your key instantly.",
+      "date": "2025-02-10"
+    },
+    {
+      "id": "bao-hanh",
+      "title": "Warranty policy for genuine keys",
+      "excerpt": "All keys are activation-warranted with detailed guidance.",
+      "date": "2025-02-01"
+    },
+    {
+      "id": "an-toan",
+      "title": "Keep your game account safe",
+      "excerpt": "Enable 2FA, manage recovery email, avoid cracked software.",
+      "date": "2025-01-20"
+    }
+  ]
+}
