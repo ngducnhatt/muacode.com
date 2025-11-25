@@ -14,7 +14,7 @@
 			"label": "Mua Empire coin",
 			"price": 17250,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-5.0%"
 		},
 		{
@@ -22,7 +22,7 @@
 			"label": "Bán Empire coin",
 			"price": 17050,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-5%"
 		}
 	],

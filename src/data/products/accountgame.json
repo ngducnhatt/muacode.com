@@ -14,7 +14,7 @@
 			"label": "Account LOL PBE",
 			"price": 5000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-20%"
 		},
 		{
@@ -22,7 +22,7 @@
 			"label": "Account Valorant night market",
 			"price": 15000,
 			"sold": 1000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-2%"
 		},
 		{
@@ -30,7 +30,7 @@
 			"label": "Account Valorant Lv20",
 			"price": 50000,
 			"sold": 1000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-15%"
 		}
 	],

@@ -13,7 +13,7 @@
 			"label": "Đổi tên Faceit",
 			"price": 30000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-2.0%"
 		},
 		{
@@ -21,7 +21,7 @@
 			"label": "Faceit Premium 1 tháng",
 			"price": 205000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-2.0%"
 		},
 		{
@@ -29,7 +29,7 @@
 			"label": "Faceit Premium 12 tháng",
 			"price": 1860000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-10%"
 		},
 		{
@@ -37,7 +37,7 @@
 			"label": "Faceit Plus 1 tháng",
 			"price": 130000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-2.0%"
 		},
 		{
@@ -45,7 +45,7 @@
 			"label": "Faceit Plus 12 tháng",
 			"price": 960000,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-10%"
 		}
 	],

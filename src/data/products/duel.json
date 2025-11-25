@@ -14,7 +14,7 @@
 			"label": "Mua Duel Value",
 			"price": 28230,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-10%"
 		},
 		{
@@ -22,7 +22,7 @@
 			"label": "Bán Duel Value",
 			"price": 27511,
 			"sold": 10000,
-			"tag": "Ưu đãi",
+			"status": 1,
 			"save": "-15%"
 		}
 	],

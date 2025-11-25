@@ -14,7 +14,7 @@
 			"label": "Viettel 100k",
 			"price": 100000,
 			"sold": 10000,
-			"tag": "Nhanh",
+			"status": 1,
 			"save": "0%"
 		},
 		{
@@ -22,7 +22,7 @@
 			"label": "Mobifone 100k",
 			"price": 100000,
 			"sold": 10000,
-			"tag": "Nhanh",
+			"status": 1,
 			"save": "0%"
 		},
 		{
@@ -30,7 +30,7 @@
 			"label": "Vinaphone 100k",
 			"price": 100000,
 			"sold": 10000,
-			"tag": "Nhanh",
+			"status": 1,
 			"save": "0%"
 		},
 		{
@@ -38,7 +38,7 @@
 			"label": "Viettel 200k",
 			"price": 200000,
 			"sold": 10000,
-			"tag": "Nhanh",
+			"status": 1,
 			"save": "0%"
 		}
 	],
