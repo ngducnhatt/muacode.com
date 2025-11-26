@@ -39,7 +39,8 @@ const Header = () => {
 	}, []);
 
 	useEffect(() => {
-		setHydrated(true);
+		const id = requestAnimationFrame(() => setHydrated(true));
+		return () => cancelAnimationFrame(id);
 	}, []);
 
 	const isActive = (href: string) => {

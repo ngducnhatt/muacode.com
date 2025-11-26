@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
@@ -345,12 +346,8 @@ const ProductDetailTemplate = ({
 							}}>
 							{available ? "Thêm vào giỏ hàng" : "Hết hàng"}
 						</button>
-						<button
-							className="w-full rounded-3xl bg-white px-4 py-2 text-sm font-medium text-black "
-							onClick={() => {
-								window.location.href = "/checkout";
-							}}>
-							Xem giỏ hàng
+						<button className="w-full rounded-3xl bg-white px-4 py-2 text-sm font-medium text-black ">
+							<Link href="/checkout">Xem giỏ hàng</Link>
 						</button>
 					</div>
 				</div>
