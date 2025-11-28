@@ -106,7 +106,7 @@ const ProductsPage = () => {
 	}, [activeCategory, products, search]);
 
 	return (
-		<div className="space-y-6">
+		<div className="px-4 space-y-6">
 			<div className="relative w-full max-w-md">
 				<input
 					type="text"

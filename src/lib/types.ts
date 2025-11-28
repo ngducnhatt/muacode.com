@@ -8,6 +8,15 @@ export type Category = {
 	description?: string[];
 };
 
+export type HeroSlide = {
+	title: string;
+	subtitle?: string;
+	description?: string;
+	image: string;
+	href: string;
+	ctalabel?: string;
+};
+
 export type ProductVariant = {
 	id: string;
 	label: string;
@@ -25,7 +34,7 @@ export type ProductSource = {
 	image?: string;
 	notes?: string[];
 	variants?: ProductVariant[];
-	description?: ProductSection[];
+	description?: string;
 	related?: RelatedProduct[];
 };
 
@@ -47,4 +56,17 @@ export type ProductListItem = {
 	save?: string;
 	status?: boolean;
 	image?: string;
+};
+
+export type TelegramOrderFormProps = {
+	selectedItem: ProductVariant;
+	banks?: Bank[];
+};
+
+export type Bank = {
+	id: number;
+	name: string;
+	code: string;
+	bin: string;
+	shortName: string;
 };

@@ -1,0 +1,25 @@
+
+> cs2store@0.1.0 dev
+> next dev --hostname 0.0.0.0 --port 3000
+
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://0.0.0.0:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 588ms
+ ○ Compiling / ...
+ GET / 200 in 4.6s (compile: 3.8s, render: 813ms)
+ GET /products/steam 500 in 1228ms (compile: 1142ms, render: 85ms)
+ GET /products/steam 500 in 17ms (compile: 11ms, render: 6ms)
+ ✓ Compiled in 213ms
+ GET /products/steam 200 in 210ms (compile: 64ms, render: 147ms)
+ GET /products/steam 200 in 37ms (compile: 3ms, render: 34ms)
+ GET /products/accountgame 500 in 253ms (compile: 238ms, render: 15ms)
+ GET /products/accountgame 500 in 15ms (compile: 6ms, render: 9ms)
+ GET /products/steam 500 in 10ms (compile: 4ms, render: 6ms)
+ GET /products/steam 500 in 10ms (compile: 4ms, render: 6ms)
+ GET /products/steam 500 in 9ms (compile: 4ms, render: 5ms)
+ GET / 500 in 9ms (compile: 4ms, render: 5ms)
+ ✓ Compiled in 36ms

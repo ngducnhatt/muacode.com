@@ -9,13 +9,13 @@ type ProductVariantsProps = {
 	formatPrice: (value: number) => string;
 };
 
-const productList = ({
+const ProductList = ({
 	variants,
 	selectedId,
 	onSelect,
 	formatPrice,
 }: ProductVariantsProps) => (
-	<div className="rounded-2xl border border-surface-600 bg-surface-700 p-4 shadow-soft">
+	<div className="card p-4">
 		<h3 className="text-sm font-semibold text-ink-50">Chọn sản phẩm</h3>
 		<div className="mt-3 grid gap-3 md:grid-cols-2">
 			{variants.map((variant) => {
@@ -62,4 +62,4 @@ const productList = ({
 	</div>
 );
 
-export default productList;
+export default ProductList;

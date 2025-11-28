@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 import ProductDescription from "@/app/components/products/ProductDescription";
-import ProductHero from "@/app/components/products/productImage";
-import ProductSummary from "@/app/components/products/productOrrder";
-import ProductVariants from "@/app/components/products/productList";
+import ProductHero from "@/app/components/products/ProductImage";
+import ProductSummary from "@/app/components/products/ProductOrder";
+import ProductVariants from "@/app/components/products/ProductList";
 import { useCart } from "@/app/context/CartContext";
 import { fetchProductDetail } from "@/lib/data";
 import type {
@@ -14,7 +14,7 @@ import type {
 	ProductVariant,
 } from "@/lib/types";
 
-const CACHE_TTL = 60_000;
+
 const placeholderImg = "/assets/placeholder-card.svg";
 const categoryId = "steam";
 
@@ -27,7 +27,7 @@ type Detail = {
 		notes?: string[];
 	};
 	variants: (ProductVariant & { status?: boolean })[];
-	description: ProductSection[];
+	description: string;
 };
 
 const toBooleanStatus = (value: unknown) => {
@@ -50,33 +50,8 @@ const normalizeDetail = (data: ProductSource | null): Detail | null => {
 			...variant,
 			status: toBooleanStatus(variant.status ?? true),
 		})),
-		description: data.description || [],
+		description: data.description || "",
 	};
-};
-
-const readCacheDetail = (): Detail | null => {
-	if (typeof window === "undefined") return null;
-	try {
-		const raw = sessionStorage.getItem(`cache_detail_${categoryId}`);
-		if (!raw) return null;
-		const parsed = JSON.parse(raw);
-		if (!parsed?.ts || Date.now() - parsed.ts > CACHE_TTL) return null;
-		return parsed.data as Detail;
-	} catch {
-		return null;
-	}
-};
-
-const writeCacheDetail = (value: Detail) => {
-	if (typeof window === "undefined") return;
-	try {
-		sessionStorage.setItem(
-			`cache_detail_${categoryId}`,
-			JSON.stringify({ ts: Date.now(), data: value }),
-		);
-	} catch {
-		// ignore storage error
-	}
 };
 
 const formatPrice = (value: number) =>
@@ -84,12 +59,9 @@ const formatPrice = (value: number) =>
 
 const SteamPage = () => {
 	const { addToCart } = useCart();
-	const initialDetail = readCacheDetail();
-	const [detail, setDetail] = useState<Detail | null>(initialDetail);
+	const [detail, setDetail] = useState<Detail | null>(null);
 	const [quantity, setQuantity] = useState(1);
-	const [selected, setSelected] = useState(
-		initialDetail?.variants[0]?.id ?? "",
-	);
+	const [selected, setSelected] = useState("");
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
@@ -100,19 +72,15 @@ const SteamPage = () => {
 				if (!mounted) return;
 				const normalized = normalizeDetail(data);
 				if (!normalized) {
-					setError("Khong tim thay san pham.");
+					setError("Không tìm thấy sản phẩm");
 					return;
 				}
 				setDetail(normalized);
 				setSelected(normalized.variants[0]?.id ?? "");
-				writeCacheDetail(normalized);
 			})
 			.catch((err) => {
 				if (!mounted) return;
-				setError(
-					err?.message ||
-						"Khong tai duoc du lieu san pham, vui long thu lai.",
-				);
+				setError(err?.message || "Không tải được dữ liệu sản phẩm");
 			});
 
 		return () => {
@@ -138,7 +106,7 @@ const SteamPage = () => {
 					name: `${detail.hero.title} - ${selectedItem.label}`,
 					price: selectedItem.price
 						? formatPrice(selectedItem.price)
-						: "Lien he",
+						: "Liên hệ",
 					image: detail.hero.image,
 					categoryId,
 				},
@@ -158,33 +126,41 @@ const SteamPage = () => {
 	if (!detail) {
 		return (
 			<div className="rounded-2xl border border-surface-600 bg-surface-700 p-6 text-ink-50">
-				Dang tai du lieu san pham...
+				Đang tải dữ liệu sản phẩm
 			</div>
 		);
 	}
 
 	return (
-		<div className="space-y-6">
+		<div className="px-4 space-y-6">
 			<ProductHero hero={detail.hero} placeholderImg={placeholderImg} />
-			<div className="grid gap-5 lg:grid-cols-[1.7fr,0.9fr]">
-				<div className="space-y-4">
+			<div className="grid gap-5 lg:grid-cols-3">
+				<div className="space-y-4 lg:col-span-2">
 					<ProductVariants
 						variants={detail.variants}
 						selectedId={selectedItem?.id}
 						onSelect={setSelected}
 						formatPrice={formatPrice}
 					/>
+				</div>
+				<div className="space-y-4 lg:col-span-1">
+					<ProductSummary
+						quantity={quantity}
+						total={total}
+						available={available}
+						onDecrease={() =>
+							setQuantity((q) => Math.max(1, q - 1))
+						}
+						onIncrease={() => setQuantity((q) => q + 1)}
+						onAddToCart={handleAddToCart}
+						formatPrice={formatPrice}
+					/>
+				</div>
+			</div>
+			<div className="grid gap-5 lg:grid-cols-3">
+				<div className="space-y-4 lg:col-span-2">
 					<ProductDescription description={detail.description} />
 				</div>
-				<ProductSummary
-					quantity={quantity}
-					total={total}
-					available={available}
-					onDecrease={() => setQuantity((q) => Math.max(1, q - 1))}
-					onIncrease={() => setQuantity((q) => q + 1)}
-					onAddToCart={handleAddToCart}
-					formatPrice={formatPrice}
-				/>
 			</div>
 		</div>
 	);

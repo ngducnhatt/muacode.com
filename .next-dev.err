@@ -1,0 +1,517 @@
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:7:1
+Module not found: Can't resolve '@/app/components/products/productOrrder'
+[0m [90m  5 |[39m [36mimport[39m [33mProductDescription[39m [36mfrom[39m [32m"@/app/components/products/ProductDescription"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m[0m
+
+Import map: aliased to relative './src/app/components/products/productOrrder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:7:1
+Module not found: Can't resolve '@/app/components/products/productOrrder'
+[0m [90m  5 |[39m [36mimport[39m [33mProductDescription[39m [36mfrom[39m [32m"@/app/components/products/ProductDescription"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m[0m
+
+Import map: aliased to relative './src/app/components/products/productOrrder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:7:1
+Module not found: Can't resolve '@/app/components/products/productOrrder'
+[0m [90m  5 |[39m [36mimport[39m [33mProductDescription[39m [36mfrom[39m [32m"@/app/components/products/ProductDescription"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m[0m
+
+Import map: aliased to relative './src/app/components/products/productOrrder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/products/steam/page.tsx:7:1
+Module not found: Can't resolve '@/app/components/products/productOrrder'
+[0m [90m  5 |[39m [36mimport[39m [33mProductDescription[39m [36mfrom[39m [32m"@/app/components/products/ProductDescription"[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/productOrrder"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m[0m
+
+Import map: aliased to relative './src/app/components/products/productOrrder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/ProductOrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/ProductOrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/ProductOrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/steam/page.tsx:8:1
+Module not found: Can't resolve '@/app/components/products/productList'
+[0m [90m  6 |[39m [36mimport[39m [33mProductHero[39m [36mfrom[39m [32m"@/app/components/products/productImage"[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mProductSummary[39m [36mfrom[39m [32m"@/app/components/products/ProductOrder"[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductVariants[39m [36mfrom[39m [32m"@/app/components/products/productList"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mimport[39m { useCart } [36mfrom[39m [32m"@/app/context/CartContext"[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m { fetchProductDetail } [36mfrom[39m [32m"@/lib/data"[39m[33m;[39m
+ [90m 11 |[39m [36mimport[39m type {[0m
+
+Import map: aliased to relative './src/app/components/products/productList' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/steam/page.tsx [Client Component Browser]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/steam/page.tsx [Client Component SSR]
+    ./src/app/products/steam/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/components/products/ProductPage.tsx
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 3465
+
+Import trace:
+  Client Component SSR:
+    ./src/app/components/products/ProductPage.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+
+
+./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 3465
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::process_resolve_result failed
+- Execution of <ModuleAssetContext as AssetContext>::process failed
+- failed to convert rope into string
+- invalid utf-8 sequence of 1 bytes from index 3465
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/components/products/ProductPage.tsx
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 3465
+
+Import trace:
+  Client Component SSR:
+    ./src/app/components/products/ProductPage.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+
+
+./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 3465
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::process_resolve_result failed
+- Execution of <ModuleAssetContext as AssetContext>::process failed
+- failed to convert rope into string
+- invalid utf-8 sequence of 1 bytes from index 3465
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+D:\nhat\muacode.com\node_modules\next\dist\server\dev\middleware-turbopack.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+D:\nhat\muacode.com\node_modules\next\dist\server\dev\hot-reloader-turbopack.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+D:\nhat\muacode.com\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+D:\nhat\muacode.com\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+TypeError: Invalid URL
+    at ignore-listed frames {
+  code: 'ERR_INVALID_URL',
+  input: '//',
+  base: 'http://n'
+}
+ ⨯ ./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/products/accountgame/page.tsx:3:1
+Module not found: Can't resolve '@/app/components/products/ProductPage'
+[0m [90m 1 |[39m [32m"use client"[39m[33m;[39m
+ [90m 2 |[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m [33mProductPage[39m [36mfrom[39m [32m"@/app/components/products/ProductPage"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m [33mAccountGamePage[39m [33m=[39m () [33m=>[39m (
+ [90m 6 |[39m 	[33m<[39m[33mProductPage[39m categoryId[33m=[39m[32m"accountgame"[39m allowNote[33m=[39m{[36mfalse[39m} [33m/[39m[33m>[39m[0m
+
+Import map: aliased to relative './src/app/components/products/ProductPage' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/products/accountgame/page.tsx [Client Component Browser]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/products/accountgame/page.tsx [Client Component SSR]
+    ./src/app/products/accountgame/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+^C^C

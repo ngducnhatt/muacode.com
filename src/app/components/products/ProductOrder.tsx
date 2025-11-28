@@ -13,7 +13,7 @@ type ProductSummaryProps = {
 	formatPrice: (value: number) => string;
 };
 
-const productOrrder = ({
+const ProductOrder = ({
 	quantity,
 	total,
 	available,
@@ -23,21 +23,17 @@ const productOrrder = ({
 	formatPrice,
 }: ProductSummaryProps) => (
 	<aside className="space-y-4">
-		<div className="rounded-2xl border border-surface-600 bg-surface-700 p-4 shadow-soft">
+		<div className="card p-4">
 			<div className="flex items-center justify-between">
 				<p className="text-sm font-normal text-ink-50">Số lượng</p>
 				<div className="flex items-center gap-2">
-					<button
-						onClick={onDecrease}
-						aria-label="Giảm số lượng">
+					<button onClick={onDecrease} aria-label="Giảm số lượng">
 						<CiCircleMinus />
 					</button>
 					<span className="min-w-[24px] text-center text-sm text-ink-50">
 						{quantity}
 					</span>
-					<button
-						onClick={onIncrease}
-						aria-label="Tăng số lượng">
+					<button onClick={onIncrease} aria-label="Tăng số lượng">
 						<CiCirclePlus />
 					</button>
 				</div>
@@ -51,11 +47,11 @@ const productOrrder = ({
 				<div className="mt-3 flex flex-col gap-2">
 					<button
 						disabled={!available}
-						className="w-full rounded-3xl bg-info-400 px-4 py-2 text-sm font-medium text-ink-50 disabled:cursor-not-allowed disabled:bg-ink-800 disabled:text-ink-200"
+						className="btn btn-info w-full disabled:cursor-not-allowed disabled:bg-ink-800 disabled:text-ink-200"
 						onClick={onAddToCart}>
 						{available ? "Thêm vào giỏ hàng" : "Hết hàng"}
 					</button>
-					<button className="w-full rounded-3xl bg-white px-4 py-2 text-sm font-medium text-black ">
+					<button className="btn btn-light w-full">
 						<Link href="/checkout">Xem giỏ hàng</Link>
 					</button>
 				</div>
@@ -64,4 +60,4 @@ const productOrrder = ({
 	</aside>
 );
 
-export default productOrrder;
+export default ProductOrder;

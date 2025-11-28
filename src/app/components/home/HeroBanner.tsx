@@ -3,21 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getSupabaseClient } from "../../../lib/supabaseClient";
-
-type Slide = {
-	title: string;
-	subtitle?: string;
-	description?: string;
-	image: string;
-	href: string;
-	ctalabel?: string;
-};
+import { fetchHeroSections } from "@/lib/data";
+import type { HeroSlide } from "@/lib/types";
 
 const AUTOPLAY_DELAY = 10000;
 
 const HeroBanner = () => {
-	const [slides, setSlides] = useState<Slide[]>([]);
+	const [slides, setSlides] = useState<HeroSlide[]>([]);
 	const [active, setActive] = useState(0);
 	const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -31,42 +23,14 @@ const HeroBanner = () => {
 	}, [slides]);
 
 	useEffect(() => {
-		const supabase = getSupabaseClient();
-		if (!supabase) return;
 		let cancelled = false;
 
-		const fetchHeroSections = async () => {
-			const { data, error } = await supabase
-				.from("hero_sections")
-				.select(
-					"title,subtitle,description,image,href,ctalabel,status,priority,created_at",
-				)
-				.eq("status", true)
-				.order("priority", { ascending: true })
-				.order("created_at", { ascending: true });
-
-			if (error) {
-				console.error("fetchHeroSections failed", error);
-				return;
-			}
-			if (!data || !data.length || cancelled) return;
-
-			const mapped: Slide[] = data
-				.map((row) => ({
-					title: row.title?.trim() || "",
-					subtitle: row.subtitle || undefined,
-					description: row.description || undefined,
-					image: row.image?.trim() || "",
-					href: row.href?.trim() || "/",
-					ctalabel: row.ctalabel?.trim() || "mua ngay",
-				}))
-				.filter((row) => row.title && row.image);
-
-			setSlides(mapped);
+		fetchHeroSections().then((data) => {
+			if (cancelled || !data.length) return;
+			setSlides(data);
 			setActive(0);
-		};
+		});
 
-		fetchHeroSections();
 		return () => {
 			cancelled = true;
 		};
@@ -181,3 +145,13 @@ const HeroBanner = () => {
 };
 
 export default HeroBanner;
+
+
+
+
+
+
+
+
+
+

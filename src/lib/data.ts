@@ -1,13 +1,30 @@
 import { getSupabaseClient } from "./supabaseClient";
 import type {
 	Category,
+	HeroSlide,
 	Post,
 	ProductListItem,
 	ProductSource,
 	ProductVariant,
 	ProductSection,
 	Service,
+	Bank,
 } from "./types";
+
+export const fetchBanks = async (): Promise<Bank[]> => {
+	try {
+		const response = await fetch("https://api.vietqr.io/v2/banks");
+		if (!response.ok) {
+			throw new Error("Failed to fetch banks");
+		}
+		const result = await response.json();
+		return result.data || [];
+	} catch (err) {
+		console.error("fetchBanks failed", err);
+		return [];
+	}
+};
+
 
 const toBooleanStatus = (value: unknown) => {
 	if (typeof value === "boolean") return value;
@@ -122,6 +139,38 @@ const normalizeVariant = (variant: any): ProductVariant => ({
 	bonus: variant.bonus,
 	status: toBooleanStatus(variant.status ?? true),
 });
+export const fetchHeroSections = async (): Promise<HeroSlide[]> => {
+	try {
+		const supabase = getSupabaseClient();
+		if (!supabase) {
+			throw new Error("Supabase client not initialized (missing env).");
+		}
+		const { data, error } = await supabase
+			.from("hero_sections")
+			.select(
+				"title,subtitle,description,image,href,ctalabel,status,priority,created_at",
+			)
+			.eq("status", true)
+			.order("priority", { ascending: true })
+			.order("created_at", { ascending: true });
+
+		if (error) throw error;
+
+		return (data || [])
+			.map((row) => ({
+				title: row.title?.trim() || "",
+				subtitle: row.subtitle || undefined,
+				description: row.description || undefined,
+				image: row.image?.trim() || "",
+				href: row.href?.trim() || "/",
+				ctalabel: row.ctalabel?.trim() || "mua ngay",
+			}))
+			.filter((row) => row.title && row.image);
+	} catch (err) {
+		console.error("fetchHeroSections failed", err);
+		return [];
+	}
+};
 
 export const fetchCategories = async (): Promise<Category[]> => {
 	try {
@@ -322,17 +371,10 @@ export const fetchProductDetail = async (
 				: catData.name ||
 				  categoryNameFallback[categoryId] ||
 				  categoryId;
-		const descriptionLines =
+		const description =
 			hasMojibake(catData.description) || !catData.description
-				? categoryDescFallback[categoryId] || []
-				: String(catData.description)
-						.split("\n")
-						.map((line) => line.trim())
-						.filter(Boolean);
-		const description: ProductSection[] = descriptionLines.map((line) => ({
-			title,
-			body: [line],
-		}));
+				? categoryDescFallback[categoryId]?.join("\n") || ""
+				: String(catData.description);
 
 		return {
 			title,

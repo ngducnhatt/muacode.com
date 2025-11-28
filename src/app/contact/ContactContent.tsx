@@ -38,9 +38,10 @@ const ContactContent = () => {
 							Liên hệ dịch vụ hỗ trợ khách hàng
 						</h2>
 						<p className="text-sm text-ink-100/80">
-							Chúng tôi hỗ trợ 24/7. Bạn có thể chat trực tiếp hoặc gửi email
-							để nhận phản hồi nhanh nhất từ đội ngũ chăm sóc khách hàng của{" "}
-							<span>Muacode.com</span>.
+							Chúng tôi hỗ trợ 24/7. Bạn có thể chat trực tiếp
+							hoặc gửi email để nhận phản hồi nhanh nhất từ đội
+							ngũ chăm sóc khách hàng của <span>Muacode.com</span>
+							.
 						</p>
 					</div>
 				</aside>
