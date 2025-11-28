@@ -15,10 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		title: `${data.title} - Giá Rẻ, Uy Tín, Tự Động | Muacode.com`,
-		description: `Mua ${data.title} giá rẻ, nhận ngay lập tức. Hỗ trợ thanh toán đa dạng, bảo hành uy tín. ${data.description.slice(
-			0,
-			100,
-		)}...`,
+		description: `Mua ${data.title} giá rẻ, nhận ngay lập tức. Hỗ trợ thanh toán đa dạng, bảo hành uy tín. ...`,
 		openGraph: {
 			title: `${data.title} - Giá Rẻ | Muacode.com`,
 			description: `Mua ${data.title} nhận ngay trong vài giây.`,
