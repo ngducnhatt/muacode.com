@@ -62,7 +62,7 @@ const Header = () => {
 				<Link href="/">
 					<Image
 						src="https://pub-f0a6dec73e084e83be3f5ea518ee5da7.r2.dev/logo.png"
-						alt="Muacode logo"
+						alt="CS2Prime logo"
 						width={32}
 						height={32}
 						style={{ height: "auto", width: "auto" }}

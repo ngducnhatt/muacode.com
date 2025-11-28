@@ -9,15 +9,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	if (!data) {
 		return {
-			title: "Duelbits Balance - Mua ngay tại Muacode.com",
+			title: "Duelbits Balance - Mua ngay tại CS2Prime.store",
 		};
 	}
 
 	return {
-		title: `${data.title} - Giá Rẻ, Uy Tín, Tự Động | Muacode.com`,
+		title: `${data.title} - Giá Rẻ, Uy Tín, Tự Động | CS2Prime.store`,
 		description: `Mua ${data.title} giá rẻ, nhận balance ngay lập tức. Hỗ trợ thanh toán đa dạng, bảo hành uy tín. ...`,
 		openGraph: {
-			title: `${data.title} - Giá Rẻ | Muacode.com`,
+			title: `${data.title} - Giá Rẻ | CS2Prime.store`,
 			description: `Mua ${data.title} nhận ngay trong vài giây.`,
 			images: [data.image || "/assets/placeholder-card.svg"],
 		},

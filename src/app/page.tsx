@@ -14,7 +14,7 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-	title: "Muacode.com",
+	title: "CS2Prime.store - Hệ thống tài khoản CS2 & Dịch vụ Steam",
 };
 
 export const revalidate = 0;

@@ -10,7 +10,7 @@ import { SellIdInput } from "./SellIdInput";
 import { OrderConfirmation } from "./OrderConfirmation";
 
 export const SellForm = ({ selectedItem, banks = [] }: OrderFormProps) => {
-	const [orderId] = useState(() => `MUACODE${Date.now()}`);
+	const [orderId] = useState(() => `CS2PRIME${Date.now()}`);
 	const initialState: FormState = { message: "", success: false, errors: {} };
 	const [state, formAction] = useActionState(sendTelegramOrder, initialState);
 

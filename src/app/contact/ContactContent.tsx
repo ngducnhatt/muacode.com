@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const CONTACT_EMAIL = "support@muacode.com";
+const CONTACT_EMAIL = "support@cs2prime.store";
 
 const ContactContent = () => {
 	const [copied, setCopied] = useState(false);
@@ -40,7 +40,7 @@ const ContactContent = () => {
 						<p className="text-sm text-ink-100/80">
 							Chúng tôi hỗ trợ 24/7. Bạn có thể chat trực tiếp
 							hoặc gửi email để nhận phản hồi nhanh nhất từ đội
-							ngũ chăm sóc khách hàng của <span>Muacode.com</span>
+							ngũ chăm sóc khách hàng của <span>CS2Prime.store</span>
 							.
 						</p>
 					</div>
@@ -83,12 +83,12 @@ const ContactContent = () => {
 
 					<div className="rounded-2xl bg-ink-950 p-5 space-y-3">
 						<h3 className="text-lg font-normal text-ink-50">
-							Địa chỉ Muacode.com
+							Địa chỉ CS2Prime.store
 						</h3>
 						<div className="overflow-hidden rounded-xl border border-surface-600">
 							<div className="h-64 w-full bg-surface-700">
 								<iframe
-									title="Muacode.com Map"
+									title="CS2Prime.store Map"
 									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.223922260935!2d105.78884687544814!3d20.983659280654454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accf2e89d531%3A0x79a6a4e049e4116d!2zc-G7kSAxMCDEkC4gVHLhuqduIFBow7osIFAuIE3hu5kgTGFvLCBIw6AgxJDDtG5nLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1763948067283!5m2!1svi!2s"
 									className="h-full w-full"
 									loading="lazy"

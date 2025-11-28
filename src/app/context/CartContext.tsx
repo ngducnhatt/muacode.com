@@ -36,7 +36,7 @@ const parsePrice = (price: string) => {
 export const CartProvider = ({ children }: { children: ReactNode }) => {
 	const [items, setItems] = useState<CartItem[]>(() => {
 		if (typeof window === "undefined") return [];
-		const stored = localStorage.getItem("Muacode.com_cart");
+		const stored = localStorage.getItem("CS2Prime.store_cart");
 		if (!stored) return [];
 		try {
 			return JSON.parse(stored);
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 	});
 
 	useEffect(() => {
-		localStorage.setItem("Muacode.com_cart", JSON.stringify(items));
+		localStorage.setItem("CS2Prime.store_cart", JSON.stringify(items));
 	}, [items]);
 
 	const addToCart = (item: Omit<CartItem, "quantity">, quantity = 1) => {

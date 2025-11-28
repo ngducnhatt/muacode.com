@@ -12,7 +12,7 @@ import { OrderConfirmation } from "./OrderConfirmation";
 
 export const BuyForm = ({ selectedItem }: OrderFormProps) => {
 	// cho phép đổi orderId sau mỗi lần đóng popup
-	const [orderId, setOrderId] = useState(() => `MUACODE${Date.now()}`);
+	const [orderId, setOrderId] = useState(() => `CS2PRIME${Date.now()}`);
 
 	const initialState: FormState = { message: "", success: false, errors: {} };
 	const [state, formAction] = useActionState(sendTelegramOrder, initialState);
@@ -55,7 +55,7 @@ export const BuyForm = ({ selectedItem }: OrderFormProps) => {
 		setSubmissionKey(Date.now()); // force remount form
 
 		// tạo orderId mới cho đơn tiếp theo
-		setOrderId(`MUACODE${Date.now()}`);
+		setOrderId(`CS2PRIME${Date.now()}`);
 	};
 
 	return (

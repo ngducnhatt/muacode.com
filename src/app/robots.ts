@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			allow: "/",
 			disallow: ["/checkout", "/api/"],
 		},
-		sitemap: "https://muacode.com/sitemap.xml",
+		sitemap: "https://cs2prime.store/sitemap.xml",
 	};
 }

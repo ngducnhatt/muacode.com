@@ -9,15 +9,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	if (!data) {
 		return {
-			title: "Tài khoản Game Giá Rẻ - Muacode.com",
+			title: "Tài khoản Game Giá Rẻ - CS2Prime.store",
 		};
 	}
 
 	return {
-		title: `${data.title} - Giá Rẻ, Uy Tín, Bảo Hành | Muacode.com`,
+		title: `${data.title} - Giá Rẻ, Uy Tín, Bảo Hành | CS2Prime.store`,
 		description: `Mua bán ${data.title} uy tín, giá rẻ. Bảo hành đầy đủ, hỗ trợ thay đổi thông tin.`,
 		openGraph: {
-			title: `${data.title} - Giá Rẻ | Muacode.com`,
+			title: `${data.title} - Giá Rẻ | CS2Prime.store`,
 			description: `Mua ${data.title} chất lượng, bảo hành uy tín.`,
 			images: [data.image || "/assets/placeholder-card.svg"],
 		},

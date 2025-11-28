@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { fetchCategories } from "@/lib/data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const baseUrl = "https://muacode.com";
+	const baseUrl = "https://cs2prime.store";
 
 	// 1. Các trang tĩnh
 	const staticRoutes = [
