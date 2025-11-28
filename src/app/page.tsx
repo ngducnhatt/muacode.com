@@ -8,6 +8,7 @@ import SaleCard from "./components/home/SaleCard";
 import {
 	fetchCategories,
 	fetchDeals,
+	fetchHeroSections,
 	fetchPopularProducts,
 	fetchServices,
 } from "@/lib/data";
@@ -44,16 +45,18 @@ const buildServiceItems = (
 	}));
 
 export default async function Home() {
-	const [categories, services, popularItems, deals] = await Promise.all([
-		fetchCategories(),
-		fetchServices(),
-		fetchPopularProducts(),
-		fetchDeals(),
-	]);
+	const [categories, services, popularItems, deals, heroSlides] =
+		await Promise.all([
+			fetchCategories(),
+			fetchServices(),
+			fetchPopularProducts(),
+			fetchDeals(),
+			fetchHeroSections(),
+		]);
 
 	return (
 		<div className=" px-4 py-10 md:py-12 space-y-10">
-			<HeroBanner />
+			<HeroBanner slides={heroSlides} />
 			<SaleCard deals={deals} />
 			<PorpularCard
 				items={popularItems.map((item) => ({

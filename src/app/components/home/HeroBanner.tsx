@@ -3,13 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchHeroSections } from "@/lib/data";
 import type { HeroSlide } from "@/lib/types";
 
 const AUTOPLAY_DELAY = 10000;
 
-const HeroBanner = () => {
-	const [slides, setSlides] = useState<HeroSlide[]>([]);
+type HeroBannerProps = {
+	slides: HeroSlide[];
+};
+
+const HeroBanner = ({ slides }: HeroBannerProps) => {
 	const [active, setActive] = useState(0);
 	const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -20,21 +22,7 @@ const HeroBanner = () => {
 			() => setActive((idx) => (idx + 1) % slides.length),
 			AUTOPLAY_DELAY,
 		);
-	}, [slides]);
-
-	useEffect(() => {
-		let cancelled = false;
-
-		fetchHeroSections().then((data) => {
-			if (cancelled || !data.length) return;
-			setSlides(data);
-			setActive(0);
-		});
-
-		return () => {
-			cancelled = true;
-		};
-	}, []);
+	}, [slides.length]);
 
 	useEffect(() => {
 		startAutoplay();

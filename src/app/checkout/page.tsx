@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 import { useCart } from "@/app/context/CartContext";
+import { sendTelegramCheckoutOrder } from "@/app/actions/telegram";
 
 const formatCurrency = (value: number) =>
 	value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
@@ -14,40 +16,70 @@ const CheckoutPage = () => {
 	const [email, setEmail] = useState("");
 	const [note, setNote] = useState("");
 	const [message, setMessage] = useState("");
+	const [isProcessing, setIsProcessing] = useState(false);
+	const [showQrModal, setShowQrModal] = useState(false);
+	const [qrUrl, setQrUrl] = useState("");
 
-	const handleSubmit = (e: FormEvent) => {
+	const handlePayment = async (e: FormEvent) => {
 		e.preventDefault();
 		if (!email) return;
-		setMessage(
-			"Đã nhận yêu cầu thanh toán. Vui lòng kiểm tra email trong ít phút.",
-		);
-		setTimeout(() => {
+
+		setIsProcessing(true);
+		setMessage("");
+
+		const orderId = `ORDER_${Date.now()}`;
+		const orderTime = new Date().toISOString();
+
+		// 1. Gửi thông báo Telegram
+		const result = await sendTelegramCheckoutOrder({
+			email,
+			note,
+			totalValue,
+			orderId,
+			items,
+		});
+
+		if (result.success) {
+			// 2. Tạo URL QR Code
+			const qrBank = "970407"; // Techcombank BIN
+			const qrAccount = "1122102102";
+			const addInfoRaw = `${email} ${orderTime}`;
+			const addInfo = btoa(addInfoRaw).replace(/=+$/, ""); // Base64 & remove '='
+			const url = `https://img.vietqr.io/image/${qrBank}-${qrAccount}-compact.png?amount=${totalValue}&addInfo=${addInfo}`;
+
+			setQrUrl(url);
+			setShowQrModal(true);
+			setMessage(
+				"Đã nhận yêu cầu. Vui lòng quét mã QR để hoàn tất thanh toán.",
+			);
 			clearCart();
-		}, 500);
+		} else {
+			setMessage(result.message || "Có lỗi xảy ra. Vui lòng thử lại.");
+		}
+
+		setIsProcessing(false);
 	};
 
 	return (
-		<div className="space-y-6">
-			<header className="rounded-2xl border border-surface-600 bg-surface-700 p-6 shadow-soft">
-				<h1 className="mt-2 text-2xl font-bold text-ink-50">
+		<div className="space-y-6 p-4">
+			<header className="box p-4 text-ink-50">
+				<h1 className="mt-2 text-2xl text-ink-50">
 					Thanh toán đơn hàng
 				</h1>
 				<p className="text-sm text-ink-100/80">
-					Nhập email để nhận key/giftcard ngay sau khi hoàn tất thanh toán.
+					Nhập email để nhận key/giftcard ngay sau khi hoàn tất thanh
+					toán.
 				</p>
 			</header>
-
 			<div className="grid gap-6 lg:grid-cols-[1.4fr,1fr]">
-				<section className="space-y-4 rounded-2xl border border-surface-600 bg-surface-700 p-5 shadow-soft">
-					<h2 className="text-lg font-semibold text-ink-50">
-						Sản phẩm
-					</h2>
+				<section className="box space-y-4 p-5 text-ink-50">
+					<h2 className="text-lg text-ink-50">Sản phẩm</h2>
 					{items.length === 0 ? (
-						<div className="rounded-xl border border-surface-600 bg-ink-800/60 p-4 text-sm text-ink-100/80">
+						<div className="box bg-ink-800/60 p-4 text-sm text-ink-100/80">
 							Giỏ hàng trống.{" "}
 							<Link
 								href="/products"
-								className="font-semibold text-ink-50 underline">
+								className="text-ink-50 underline">
 								Xem sản phẩm
 							</Link>
 						</div>
@@ -56,9 +88,9 @@ const CheckoutPage = () => {
 							{items.map((item) => (
 								<li
 									key={item.id}
-									className="flex flex-col gap-3 rounded-xl border border-surface-600 bg-ink-800/60 p-3 sm:flex-row sm:items-center sm:justify-between">
+									className="box flex flex-col gap-3 bg-ink-800/60 p-3 sm:flex-row sm:items-center sm:justify-between">
 									<div>
-										<p className="font-semibold text-ink-50">
+										<p className="text-ink-50">
 											{item.name}
 										</p>
 										<p className="text-sm text-ink-100/80">
@@ -87,11 +119,11 @@ const CheckoutPage = () => {
 													Number(e.target.value),
 												)
 											}
-											className="w-16 rounded-md border border-ink-700 bg-surface-700 px-2 py-1 text-sm text-ink-50 focus:border-ink-50 focus:outline-none"
+											className="input w-16 py-1 text-sm"
 										/>
 										<button
 											type="button"
-											className="rounded-md border border-ink-700 px-3 py-1 text-xs font-semibold text-ink-50 hover:border-ink-50"
+											className="btn btn-ghost px-3 py-1 text-xs"
 											onClick={() =>
 												removeFromCart(item.id)
 											}>
@@ -104,15 +136,15 @@ const CheckoutPage = () => {
 					)}
 				</section>
 
-				<section className="space-y-4 rounded-2xl border border-surface-600 bg-surface-700 p-5 shadow-soft">
-					<h2 className="text-lg font-semibold text-ink-50">
+				<section className="box space-y-4 p-5 text-ink-50">
+					<h2 className="text-lg text-ink-50">
 						Thông tin thanh toán
 					</h2>
-					<form className="space-y-4" onSubmit={handleSubmit}>
+					<form className="space-y-4" onSubmit={handlePayment}>
 						<div className="space-y-1">
 							<label
 								htmlFor="email"
-								className="text-sm font-semibold text-ink-50">
+								className="text-sm text-ink-50">
 								Email nhận sản phẩm
 							</label>
 							<input
@@ -122,13 +154,13 @@ const CheckoutPage = () => {
 								placeholder="you@example.com"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
-								className="w-full rounded-xl border border-ink-700 bg-surface-700 px-3 py-2 text-ink-50 placeholder:text-ink-100/50 focus:border-ink-50 focus:outline-none"
+								className="input"
 							/>
 						</div>
 						<div className="space-y-1">
 							<label
 								htmlFor="note"
-								className="text-sm font-semibold text-ink-50">
+								className="text-sm text-ink-50">
 								Ghi chú (tuỳ chọn)
 							</label>
 							<textarea
@@ -137,13 +169,13 @@ const CheckoutPage = () => {
 								value={note}
 								onChange={(e) => setNote(e.target.value)}
 								placeholder="Ví dụ: yêu cầu xuất hoá đơn, đổi giờ giao..."
-								className="w-full rounded-xl border border-ink-700 bg-surface-700 px-3 py-2 text-ink-50 placeholder:text-ink-100/50 focus:border-ink-50 focus:outline-none"
+								className="input"
 							/>
 						</div>
-						<div className="rounded-xl border border-surface-600 bg-ink-800/60 p-3 text-sm text-ink-100/80">
+						<div className="box bg-ink-800/60 p-3 text-sm text-ink-100/80">
 							<div className="flex items-center justify-between">
 								<span>Tạm tính</span>
-								<span className="font-semibold text-ink-50">
+								<span className="text-ink-50">
 									{formatCurrency(totalValue)}
 								</span>
 							</div>
@@ -156,9 +188,9 @@ const CheckoutPage = () => {
 						</div>
 						<button
 							type="submit"
-							disabled={items.length === 0}
-							className="w-full rounded-3xl bg-ink-100 px-4 py-3 text-sm font-semibold text-ink-900 transition hover:-translate-y-0.5 hover:bg-ink-50 disabled:cursor-not-allowed disabled:bg-ink-700 disabled:text-ink-100">
-							Thanh toán
+							disabled={items.length === 0 || isProcessing}
+							className="btn btn-primary w-full py-3 text-sm font-semibold">
+							{isProcessing ? "Đang xử lý..." : "Thanh toán"}
 						</button>
 						{message && (
 							<p className="text-sm text-ink-50">{message}</p>
@@ -166,6 +198,60 @@ const CheckoutPage = () => {
 					</form>
 				</section>
 			</div>
+			{/* QR Code Modal */}
+			{showQrModal && (
+				<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+					<div className="box relative w-full max-w-sm bg-surface-700 p-6 shadow-2xl animate-in fade-in zoom-in duration-200 md:max-w-2xl">
+						<button
+							onClick={() => setShowQrModal(false)}
+							className="absolute right-4 top-4 text-ink-100 hover:text-ink-50">
+							✕
+						</button>
+						<h3 className="mb-4 text-center text-xl text-ink-50">
+							Quét mã để thanh toán
+						</h3>
+						<div className="grid gap-4 md:grid-cols-2">
+							<div className="flex flex-col items-center">
+								<div className="aspect-square relative w-full overflow-hidden rounded-xl bg-white">
+									<Image
+										src={qrUrl}
+										alt="VietQR Payment"
+										fill
+										className="object-contain p-2"
+										unoptimized
+									/>
+								</div>
+								<p className="mt-4 text-center text-sm font-medium text-ink-50">
+									Số tiền: {formatCurrency(totalValue)}
+								</p>
+							</div>
+							<div className="space-y-4">
+								<div className="text-sm text-ink-100/80">
+									<p>
+										Vui lòng sử dụng ứng dụng ngân hàng của
+										bạn để quét mã QR này để thanh toán.
+									</p>
+									<p className="mt-2">
+										Sau khi chuyển khoản thành công, vui
+										lòng kiểm tra email của bạn để nhận sản
+										phẩm.
+									</p>
+									<p className="mt-2 text-yellow-300">
+										Lưu ý: Nếu sau 10 phút bạn chưa nhận
+										được email, vui lòng liên hệ bộ phận hỗ
+										trợ để được giúp đỡ.
+									</p>
+								</div>
+								<button
+									onClick={() => setShowQrModal(false)}
+									className="btn btn-primary mt-6 w-full">
+									Đóng
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			)}{" "}
 		</div>
 	);
 };

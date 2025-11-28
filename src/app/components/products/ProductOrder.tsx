@@ -23,7 +23,7 @@ const ProductOrder = ({
 	formatPrice,
 }: ProductSummaryProps) => (
 	<aside className="space-y-4">
-		<div className="card p-4">
+		<div className="box p-4">
 			<div className="flex items-center justify-between">
 				<p className="text-sm font-normal text-ink-50">Số lượng</p>
 				<div className="flex items-center gap-2">
@@ -38,7 +38,7 @@ const ProductOrder = ({
 					</button>
 				</div>
 			</div>
-			<div className="mt-3 rounded-xl border border-surface-600 bg-ink-950 p-3">
+			<div className="mt-3 p-3">
 				<p className="text-sm font-semibold text-ink-50">Tạm tính</p>
 				<p className="text-2xl font-normal text-ink-50">
 					{formatPrice(total)}

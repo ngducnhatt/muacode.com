@@ -155,3 +155,104 @@ ${bankInfo}
 		};
 	}
 }
+
+const CheckoutOrderSchema = z.object({
+	email: z.string().email("Email không hợp lệ"),
+	note: z.string().optional(),
+	totalValue: z.coerce.number(),
+	orderId: z.string(),
+	items: z.array(
+		z.object({
+			id: z.string(),
+			name: z.string(),
+			price: z.string(),
+			quantity: z.number(),
+			note: z.string().optional(),
+		}),
+	),
+});
+
+export async function sendTelegramCheckoutOrder(
+	data: z.infer<typeof CheckoutOrderSchema>,
+): Promise<{ success: boolean; message: string }> {
+	if (!botToken || !chatId) {
+		console.error("Telegram Bot Token or Chat ID is not configured.");
+		return {
+			message: "Lỗi cấu hình hệ thống.",
+			success: false,
+		};
+	}
+
+	const validation = CheckoutOrderSchema.safeParse(data);
+
+	if (!validation.success) {
+		return {
+			message: "Dữ liệu không hợp lệ.",
+			success: false,
+		};
+	}
+
+	const { email, note, totalValue, orderId, items } = validation.data;
+
+	const formatCurrency = (value: number) =>
+		value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+
+	const itemsList = items
+		.map(
+			(item, index) =>
+				`${index + 1}. **${item.name}**
+   - SL: ${item.quantity}
+   - Giá: ${item.price}
+   ${item.note ? `- Note: ${item.note}` : ""}`,
+		)
+		.join("\n");
+
+	const messageText = `
+ĐƠN HÀNG CHECKOUT MỚI
+**Order ID:** \`${orderId}\`
+**Email:** \`${email}\`
+**Ghi chú:** ${note || "Không có"}
+--------------------
+**Sản phẩm:**
+${itemsList}
+--------------------
+**TỔNG TIỀN:** \`${formatCurrency(totalValue)}\`
+`;
+
+	const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+	try {
+		const response = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				chat_id: chatId,
+				text: messageText,
+				parse_mode: "Markdown",
+			}),
+		});
+
+		const result = await response.json();
+
+		if (!result.ok) {
+			console.error("Telegram API error:", result);
+			return {
+				message: "Gửi đơn hàng thất bại.",
+				success: false,
+			};
+		}
+
+		return {
+			message: "Đơn hàng đã được gửi thành công!",
+			success: true,
+		};
+	} catch (error) {
+		console.error("Failed to send Telegram message:", error);
+		return {
+			message: "Lỗi kết nối.",
+			success: false,
+		};
+	}
+}

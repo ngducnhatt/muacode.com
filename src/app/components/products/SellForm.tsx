@@ -9,10 +9,7 @@ import { AmountInput } from "./AmountInput";
 import { SellIdInput } from "./SellIdInput";
 import { OrderConfirmation } from "./OrderConfirmation";
 
-export const SellForm = ({
-	selectedItem,
-	banks = [],
-}: OrderFormProps) => {
+export const SellForm = ({ selectedItem, banks = [] }: OrderFormProps) => {
 	const [orderId] = useState(() => `MUACODE${Date.now()}`);
 	const initialState: FormState = { message: "", success: false, errors: {} };
 	const [state, formAction] = useActionState(sendTelegramOrder, initialState);
@@ -29,7 +26,12 @@ export const SellForm = ({
 	const [submissionKey, setSubmissionKey] = useState(0);
 
 	const [copied, setCopied] = useState(false);
-	const MY_ID_STEAM = "76561199874889649";
+	const MY_ID_STEAM =
+		selectedItem.id === "empiresell"
+			? "76561199874889649"
+			: selectedItem.id === "duelsell"
+			? "qexc"
+			: "";
 
 	const HandleCopyId = async () => {
 		try {
@@ -43,16 +45,16 @@ export const SellForm = ({
 	};
 
 	return (
-		<div className="rounded-2xl border border-surface-600 bg-surface-700 px-5 shadow-soft">
+		<div className="box p-5">
 			<form key={submissionKey} action={formAction} className="space-y-4">
 				{(selectedItem.id === "empiresell" ||
 					selectedItem.id === "duelsell") && (
-					<div className="text-xl text-ink-100 mt-5">
+					<div className="text-xl">
 						<h3>ID nhận</h3>
 						<div className="mt-2 flex flex-wrap gap-2">
 							<button
 								onClick={HandleCopyId}
-								className="rounded-full bg-surface-700 px-3 py-1 text-sm font-medium text-ink-50 transition hover:border-ink-100 hover:bg-surface-600"
+								className="btn btn-primary px-3 py-1 rounded-full"
 								title="Đã copy ID Steam">
 								{copied ? "Đã copy!" : MY_ID_STEAM}
 							</button>
@@ -85,7 +87,7 @@ export const SellForm = ({
 						Ngân hàng
 					</label>
 					<input
-						className="w-full px-3 border border-surface-600 rounded-2xl bg-surface-800 text-ink-100 focus:outline-none focus:ring-2 focus:ring-accent-500"
+						className="input"
 						id="order-bank"
 						name="bank"
 						type="text"
@@ -96,6 +98,22 @@ export const SellForm = ({
 						onKeyDown={(e) => {
 							if (e.key === "Enter") {
 								e.preventDefault();
+								const match = banks.find(
+									(b) =>
+										b.shortName
+											.toLowerCase()
+											.startsWith(
+												bankValue.toLowerCase(),
+											) ||
+										b.name
+											.toLowerCase()
+											.startsWith(
+												bankValue.toLowerCase(),
+											),
+								);
+								if (match) {
+									setBankValue(match.shortName);
+								}
 							}
 						}}
 					/>
@@ -120,7 +138,7 @@ export const SellForm = ({
 						Số tài khoản
 					</label>
 					<input
-						className="w-full px-3 border border-surface-600 rounded-2xl bg-surface-800 text-ink-100 focus:outline-none focus:ring-2 focus:ring-accent-500"
+						className="input"
 						id="order-account"
 						name="account"
 						type="text"
@@ -142,7 +160,7 @@ export const SellForm = ({
 						Tên tài khoản ngân hàng
 					</label>
 					<input
-						className="w-full px-3 border border-surface-600 rounded-2xl bg-surface-800 text-ink-100 focus:outline-none focus:ring-2 focus:ring-accent-500"
+						className="input"
 						id="order-name"
 						name="name"
 						type="text"

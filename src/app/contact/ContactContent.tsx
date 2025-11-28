@@ -53,13 +53,13 @@ const ContactContent = () => {
 						</h3>
 
 						<div className="mt-4 grid gap-2 md:grid-cols-3">
-							<button className="flex items-center gap-2 rounded-3xl border border-surface-600 bg-surface-700 px-3 py-2 text-left text-sm font-semibold text-ink-50">
-								<span>Facebook</span>
+							<button className="flex items-center gap-2 card px-3 py-2 text-left text-sm font-semibold text-ink-50">
+								<a href="">Facebook</a>
 							</button>
-							<button className="flex items-center gap-2 rounded-3xl border border-surface-600 bg-surface-700 px-3 py-2 text-left text-sm font-semibold text-ink-50">
+							<button className="flex items-center gap-2 card px-3 py-2 text-left text-sm font-semibold text-ink-50">
 								<span>Telegram</span>
 							</button>
-							<button className="flex items-center gap-2 rounded-3xl border border-surface-600 bg-surface-700 px-3 py-2 text-left text-sm font-semibold text-ink-50">
+							<button className="flex items-center gap-2 card px-3 py-2 text-left text-sm font-semibold text-ink-50">
 								<span>Discord</span>
 							</button>
 						</div>

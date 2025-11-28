@@ -51,8 +51,10 @@ const PorpularCard = ({
 							key={card.id}
 							href={card.href}
 							aria-disabled={!available}
-							className={`group flex gap-3 rounded-2xl border border-surface-600 bg-surface-700 p-3 shadow-soft transition hover:border-primary-900/70 ${
-								available ? "" : "pointer-events-none opacity-60"
+							className={`group flex gap-3 card ${
+								available
+									? ""
+									: "pointer-events-none opacity-60"
 							}`}>
 							<div className="relative w-24 aspect-[522/653] flex-shrink-0 overflow-hidden rounded-2xl">
 								<Image
@@ -70,7 +72,9 @@ const PorpularCard = ({
 										{card.title}
 									</p>
 									<p className="text-xs font-thin text-ink-200 line-clamp-1">
-										{available ? card.tag || "Mua ngay" : "Hết hàng"}
+										{available
+											? card.tag || "Mua ngay"
+											: "Hết hàng"}
 									</p>
 								</div>
 								<div className="space-y-1">

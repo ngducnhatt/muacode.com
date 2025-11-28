@@ -15,28 +15,20 @@ type NavLinkItem = { label: string; href: string };
 const Header = () => {
 	const pathname = usePathname();
 	const [open, setOpen] = useState(false);
-	const [navLinks, setNavLinks] = useState<NavLinkItem[]>([]);
+	const navLinks: NavLinkItem[] = [
+		{ label: "Steam Wallet Code", href: "/products/steam" },
+		{ label: "CsgoEmpire", href: "/products/csgoempire" },
+		{ label: "Duel.com", href: "/products/duel" },
+		{ label: "Faceit", href: "/products/faceit" },
+		{ label: "Tài khoản game", href: "/products/accountgame" },
+		{ label: "Dịch vụ", href: "/services" },
+	];
 	const { items } = useCart();
 	const [hydrated, setHydrated] = useState(false);
 	const cartCount = useMemo(
 		() => items.reduce((sum, item) => sum + item.quantity, 0),
 		[items],
 	);
-
-	useEffect(() => {
-		let mounted = true;
-		fetchNavigation()
-			.then((links) => {
-				if (mounted) setNavLinks(links);
-			})
-			.catch((err) => {
-				console.error("fetchNavigation failed", err);
-				if (mounted) setNavLinks([]);
-			});
-		return () => {
-			mounted = false;
-		};
-	}, []);
 
 	useEffect(() => {
 		const id = requestAnimationFrame(() => setHydrated(true));

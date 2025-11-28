@@ -15,7 +15,7 @@ const ProductList = ({
 	onSelect,
 	formatPrice,
 }: ProductVariantsProps) => (
-	<div className="card p-4">
+	<div className="box p-4">
 		<h3 className="text-sm font-semibold text-ink-50">Chọn sản phẩm</h3>
 		<div className="mt-3 grid gap-3 md:grid-cols-2">
 			{variants.map((variant) => {

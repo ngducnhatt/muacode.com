@@ -20,7 +20,8 @@ const ServicesPage = async () => {
 					Dịch vụ tiện ích
 				</h1>
 				<p className="text-sm text-ink-100/80">
-					Nạp thẻ, tư vấn giftcard, cài đặt từ xa và hỗ trợ bảo mật tài khoản.
+					Nạp thẻ, tư vấn giftcard, cài đặt từ xa và hỗ trợ bảo mật
+					tài khoản.
 				</p>
 			</header>
 
@@ -40,7 +41,7 @@ const ServicesPage = async () => {
 							type="button"
 							className="mt-4 rounded-lg border border-ink-700 px-4 py-2 text-sm font-semibold text-ink-50 hover:-translate-y-0.5 hover:border-ink-50"
 							disabled={service.status === false}>
-							{service.status === false ? "Tạm hết" :  "Liên hệ"}
+							{service.status === false ? "Tạm hết" : "Liên hệ"}
 						</button>
 					</div>
 				))}
