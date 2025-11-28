@@ -51,9 +51,9 @@ const ProductOrder = ({
 						onClick={onAddToCart}>
 						{available ? "Thêm vào giỏ hàng" : "Hết hàng"}
 					</button>
-					<button className="btn btn-light w-full">
-						<Link href="/checkout">Xem giỏ hàng</Link>
-					</button>
+					<Link className="btn btn-light w-full" href="/checkout">
+						Xem giỏ hàng
+					</Link>
 				</div>
 			</div>
 		</div>
